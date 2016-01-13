@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem 'faderuby'
-gem 'pi-piper'
+# Specify your gem's dependencies in LightingControl.gemspec
+gemspec

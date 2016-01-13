@@ -1,8 +1,3 @@
-require 'faderuby'
-
-
-
-
 # the Control Panel board is connected via a 10 pin header. the connections are as follows on either end:
 # pin :   Pi pin   :     Controller connection    : Notes
 # 1   : 3.3 volts
@@ -15,4 +10,14 @@ require 'faderuby'
 # 8   : GPIO 1     : I2C 0 SCL                    : I2C clock line for display and lux sensor
 # 9   : GPIO 24    : Quadrature encoder B switch  : pullup high, rotation shorts to ground
 # 10  : Ground
+require 'Panel/quadrature_encoder'
 
+module LightingControl
+  class Panel
+    attr_accessor :knob
+
+    def initialize
+      @knob = QuadratureEncoder.new(22,23,24)
+    end
+  end
+end
